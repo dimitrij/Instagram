@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Hej 
+    <div id="output"> </div>
+    <br />
+    <div id="myimage"> <img src="picture1.png" width="300px" height="300px"> </div>
+    <input id="nameOfPersonThatLikedPicture">
+    <button onclick="addNewLike()">Like me</button>
+
+    <div id="likesnumber"> ?? Likes </div>
+    <div id="commentsnumber">?? Comments</div>
+    <div id="description">Here will be description of picture</div>
+    <div id="comments"> Here will be comment</div>
+    <br />
+<script>
+    const likes = 23;
+    const description = "Denna bild visar staden som heter Helsingborg";
+    const listOfUsersThatLikedPicture = ["Alexandra", "Dimitrij", "Tobias", "Ardian"];
+    const listOfComment = ["Min första kommentar", "Min andra kommentar", "Min tredje kommentar", "Hej fjärde kommentar", "Min femte kommentar"];
+
+    document.getElementById("likesnumber").innerHTML = listOfUsersThatLikedPicture.length + " likes (" + listOfUsersThatLikedPicture[0] +")";
+    document.getElementById("commentsnumber").innerHTML = listOfComment.length + " comments";
+    document.getElementById("description").innerHTML = description;
+    document.getElementById("comments").innerHTML = listOfComment[3];
+   
+    const addNewLike = () => {
+      listOfUsersThatLikedPicture.push("Max");
+      console.log(listOfUsersThatLikedPicture);
+      document.getElementById("likesnumber").innerHTML = listOfUsersThatLikedPicture.length + " likes (" + listOfUsersThatLikedPicture[0] +")";
+    }
+
+    </script>
+</body>
+</html>
